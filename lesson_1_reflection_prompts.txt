@@ -1,0 +1,36 @@
+How did viewing a diff between two versions of a file help you see the bug that
+was introduced?
+
+    I can get the difference between the old file and the new file easier.
+
+How could having easy access to the entire history of a file make you a more
+efficient programmer in the long term?
+
+    I can try new things, and if it doesn't work, just get back to the last version.
+
+What do you think are the pros and cons of manually choosing when to create a
+commit, like you do in Git, vs having versions automatically saved, like Google
+docs does?
+
+    自己手动提交的优势在于每次提交都有主题，如果这个主题是一次逻辑改变，以后版本回溯的时候可以清楚地知道想要回溯到哪个版本；缺点在于不够方便，而且想做到每次逻辑改变都有提交并不是一件容易的事。
+    自动提交的优势在于不需要作者去操心提交的问题，缺点就是在回溯的时候，不容易找到自己想要的版本。
+
+Why do you think some version control systems, like Git, allow saving multiple
+files in one commit, while others, like Google Docs, treat each file separately?
+
+	因为git是代码的版本控制器，支持手动保存，每次逻辑变化可能会涉及到多个文件的改变，所以允许每次提交保存多个文件。Google Docs自动保存的策略使其每次只能针对当前正在修改的文件进行保存，所以也没办法同时提交多个文件。
+
+How can you use the commands git log and git diff to view the history of files?
+
+    git log可以查看历史提交版本
+    git diff可以比较两个版本之间的差异，只存在于前一个版本的用减号表示，只存在于后一个版本的用加号表示，可以用不同颜色显示
+    git log --stat可以直接显示每次提交与上一次相比修改了哪些文件，每个文件的加号和减号各有多少个
+
+How might using version control make you more confident to make changes that
+could break something?
+
+    I can always get back to the old version.
+
+Now that you have your workspace set up, what do you want to try using Git for?
+
+    想用git作为我的项目的版本控制器
