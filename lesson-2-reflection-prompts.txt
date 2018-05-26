@@ -1,0 +1,22 @@
+What happens when you initialize a repository? Why do you need to do it?
+
+	初始化版本库会创建.git目录，为当前目录创建git版本库。只有完成初始化之后才能使用git管理版本库。
+
+How is the staging area different from the working directory and the repository?
+What value do you think it offers?
+
+	工作区存在于硬盘上，只有通过硬盘操作才能修改工作区内容，所以不管怎么使用git命令，工作区的内容都不会发生变化；暂存区会记录每次临时提交，其优势有三点，一是可以把那些修改过的文件单独拎出来；二是可以积累多个修改的文件，形成一次逻辑改变；三是即使做了些不必要的改变，也可以在暂存区中撤销掉，而不必每次修改都做一个版本。repository是git基于工作区的内容创建的版本库，这个库就是.git，它为每个最终提交做一个版本。
+
+How can you use the staging area to make sure you have one commit per logical
+change?
+
+What are some situations when branches would be helpful in keeping your history
+organized? How would branches help?
+
+How do the diagrams help you visualize the branch structure?
+
+What is the result of merging two branches together? Why do we represent it in
+the diagram the way we do?
+
+What are the pros and cons of Git's automatic merging vs. always doing merges
+manually?
