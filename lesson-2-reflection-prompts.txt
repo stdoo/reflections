@@ -10,13 +10,26 @@ What value do you think it offers?
 How can you use the staging area to make sure you have one commit per logical
 change?
 
+	如果没有未完成的提交，staging area里面的内容必然与最近一次提交的内容一致，因为最近一次提交必然是从staging area提交。
+	git diff：查看你在工作目录修改了哪些内容
+	git diff --staged：再次确认你是否要提交这些修改
+	checkout到另一个commit后，在之前的commit上做的所有修改都撤销，只会展示执行该commit时保存的代码版本。
+	如果一个逻辑提交由多个文件修改共同完成，我可以将这些修改的文件先添加到暂存区，然后一次提交多个文件，实现了每次提交对应一个逻辑变化的目的。
+
 What are some situations when branches would be helpful in keeping your history
 organized? How would branches help?
 
+	我的理解是master是一个稳定版本，你可以在master上加入一些例行更新，或者是修改之前代码的bug；但如果你想做一些重大的版本更新，或者是尝试一些不知道会有什么后果的更新，最好是能够新建一个分支。分支能让你毫无后顾之忧地尝试新东西，而不会影响master上的更新逻辑。
+
 How do the diagrams help you visualize the branch structure?
+
+	将分支结构以树形图画出来，主干为master，其他分支以树分支形式表示，可以更加形象直观地展示分支结构。分支也是commit，分支名表示当前分支的最新commit。
 
 What is the result of merging two branches together? Why do we represent it in
 the diagram the way we do?
 
+	合并分支本质上是将两个分支的最新的commit合并成一个commit。如果是将A分支合并到B分支，那么B就会指向合并的commit。而A还是指向合并前A分支最新的commit。合并之后A分支还可以继续commit，只不过此时B分支包含了所有A分支合并前的commits。
+
 What are the pros and cons of Git's automatic merging vs. always doing merges
 manually?
+	自动合并的优势在于不需要人工判断对比，让机器完成；缺点在于无法自动处理冲突。手动合并的优势在于可以解决冲突，但是在多人合作时，这将是非常繁杂的工作，容易出错，需要花费大量时间和精力。
